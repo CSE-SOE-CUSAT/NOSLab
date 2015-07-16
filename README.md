@@ -14,7 +14,6 @@ cycleX
     ->  Exx.Pxx
 
 E - Experiment
-C - Cycle
 P - Program
 
 xx - Number / NA
