@@ -7,8 +7,9 @@ Updates : ~ 0 Experiments
 +++=========================================+++
 
 Folder Structure
+cycleX
 
-Exx.Cxx.Pxx
+    ->  Exx.Pxx
 
 E - Experiment
 C - Cycle
