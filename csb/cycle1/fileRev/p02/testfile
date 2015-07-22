@@ -1,0 +1,18 @@
+The lseek() function repositions the offset of the open file associated
+       with the file descriptor fd to the argument  offset  according  to  the
+       directive whence as follows:
+
+       SEEK_SET
+              The offset is set to offset bytes.
+
+       SEEK_CUR
+              The offset is set to its current location plus offset bytes.
+
+       SEEK_END
+              The offset is set to the size of the file plus offset bytes.
+
+       The lseek() function allows the file offset to be set beyond the end of
+       the file (but this does not change the size of the file).  If  data  is
+       later written at this point, subsequent reads of the data in the gap (a
+       "hole") return null bytes ('\0') until data is  actually  written  into
+
