@@ -8,13 +8,12 @@ Experiments : CSA (3) | CSB (1)
 
 CSA Folder Structure 
 
-Exx.Cxx.Pxx
+	Exx.Cxx.Pxx
 
-E - Experiment
-C - Cycle
-P - Program
-
-xx - Number / NA
+		E - Experiment
+		C - Cycle
+		P - Program
+		xx - Number / NA
 
 +++=========================================+++
 
