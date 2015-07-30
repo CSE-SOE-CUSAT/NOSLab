@@ -1,3 +1,6 @@
+
+// Depreciated
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,12 +43,14 @@ int main(int argc, char **argv) {
 	if (argc<2){
 		printf("Usage : %s <IP> [ Default Network Mask used ] \n\t%s <IP/Mask>\nEg : \t%s 52.5.25.103/09",argv[0],argv[0],argv[0]);
 	}else{
-		if(argv[1][sizeof(argv[1])-3]=='/')
-			mask=((argv[1][sizeof(argv[1])-2]-'0')*10)+(argv[1][sizeof(argv[1])-1]-'0');
+		printf("%s, %d",argv[1],sizeof(argv[1]));
+		if(argv[1][sizeof(argv[1])-2]=='/')
+			//mask=((argv[1][sizeof(argv[1])-2]-'0')*10)+(argv[1][sizeof(argv[1])-3]-'0');
+			exit(0);
 		else
 			mask=getMask(bytes[0]);
 		//bytes=getIP()
-		printf("%d",mask);
+		//printf("%d",mask);
 	}
 
 	return 0;
