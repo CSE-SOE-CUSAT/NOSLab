@@ -10,6 +10,7 @@ int main(){
        exit(1);
     }
 childpid = fork();
+//printf("PID %d\n:",getpid());
     switch(childpid){
        case -1:perror("Error creating child");
           exit(1);
@@ -29,7 +30,8 @@ childpid = fork();
              scanf("%d",&buffer1[i]);
           }
           write(pd[1],buffer1,n*sizeof(int));
-          waitpid(childpid,NULL,0);
+//          printf("pid1 %d \n",getpid());
+	  waitpid(childpid,NULL,0);
           break;
    }
    close(pd[0]);

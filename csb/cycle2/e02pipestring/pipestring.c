@@ -3,12 +3,9 @@
 #include <unistd.h>
 int main(){
    int pid,a,n,p[2],i,vv;
-   char *str1[100],*str2[100];
-   for(i=0;i<100;i++){
-   str1[i]=(char *)malloc(sizeof(char) * (101));
-   str2[i]=(char *)malloc(sizeof(char) * (101));
-   }
-   printf("Enter the limit:- ");
+   char str1[100][100],str2[100][100];
+   
+   printf("Number of strings:- ");
    scanf("%d",&n);
    a = pipe(p); //Unidirectional pipe
    if(a == -1)
