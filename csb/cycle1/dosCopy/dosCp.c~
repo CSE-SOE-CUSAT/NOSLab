@@ -1,3 +1,8 @@
+/*Tanmay Kumar Pandey
+12130083
+DOS COPY
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 int main(int argc,char *argv[])

@@ -18,12 +18,12 @@ int main(){
        case -1:perror("main: fork"); //error encountered
           exit(1);
        case 0: read(p[0],str2,sizeof(str2)); //read from pipe
-          printf("In child process (ID: %d)\n", pid);
+          printf("In child process (ID: %d)\n", getpid());
           for(i=0;i<n;i++)
              printf("String %d:- %s\n",i+1,str2[i]);
           exit(1);
           break;
-       default: printf("In parent process (ID: %d)\n", pid);
+       default: printf("In parent process (ID: %d)\n", getpid());
           for(i=0;i<n;i++){
              printf("Enter the string %d:- ",i+1);
              scanf("%s",str1[i]);
