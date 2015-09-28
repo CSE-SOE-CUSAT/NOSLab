@@ -28,21 +28,23 @@ int main(){
        for(i=0;i<n;i++){
          len=strlen(str2[i]);
          flag=0;
-	printf("checking %s >\t",str2[i]);
+//	printf("checking %s >\t",str2[i]);
         for(j=0,k=len-1;j<len;j++,k--){
            if(str2[i][j]!=str2[i][k]){
              flag=1;
 		break;
            }
          }
-	if(flag==1){
-	printf("%s is not a palindrome\n",str2[i]);
-	}
-	else{
-	printf("%s is a palindrom\n",str2[i]);		
-	}
-		
-	} break;
+	if(flag==0){
+           n2++;
+           strcpy(str1[n2],str2[i]);
+         }
+       }
+       str1[0][0]=n2;
+       write(p2[1],str1,sizeof(str1));
+       exit(1);
+       break;
+
 	default: printf("In parent process (ID: %d)\n", getpid());
 		  printf("Enter elements\n");
 		  for(i=0;i<n;i++){
@@ -50,8 +52,18 @@ int main(){
 		  }
 		  write(p[1],str1,sizeof(str1));
 		  waitpid(pid,NULL,0);
-		  break;
+		  read(p2[0],str2,sizeof(str2));
+		  printf("In parent process (ID: %d)\n", pid);
+       		  n=(int) str2[0][0];
+		  printf("Total no of palindromes: %d\n",n);
+       		  for(i=1;i<=n;i++)
+         	  printf("Palindrome %d:- %s\n",i,str2[i]);
+       		  break;
+
 
 	}
 	close(p[0]);
+	close(p2[0]);
+	close(p[1]);
+	close(p2[1]);
 }
